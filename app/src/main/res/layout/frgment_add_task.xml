@@ -47,7 +47,7 @@
             android:id="@+id/saveTask"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:backgroundTint="@color/light_primary"
+            android:backgroundTint="@color/primary_color"
             android:text="@string/addtask"
             android:layout_marginTop="8dp"/>
 

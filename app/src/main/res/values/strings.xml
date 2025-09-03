@@ -11,4 +11,8 @@
     <string name="pick_time">Pick time</string>
     <string name="descriptioninput">Description</string>
     <string name="edittask">EditTask</string>
-</resources>
+    <string name="language">Language</string>
+    <string name="mode">Mode</string>
+    <string name="setting">Setting</string>
+
+    </resources>

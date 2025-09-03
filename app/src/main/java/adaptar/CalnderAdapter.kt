@@ -45,7 +45,7 @@ class CalnderAdapter(private val cander: List<CalderModel>,  private val listene
         fun bind(item: CalderModel, position: Int) {
 
             val selectedColor = ContextCompat.getColor(itemView.context, R.color.dark_primary)
-            val unselectedColor = ContextCompat.getColor(itemView.context, R.color.text_color)
+            val unselectedColor = ContextCompat.getColor(itemView.context, R.color.text_calnder_item)
                 if (position == selectedPosition) {
                     dayText.setTextColor(selectedColor)
                     monthText.setTextColor(selectedColor) // اللون عند الضغط

@@ -3,12 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="light_primary">#5D9CEC</color>
-    <color name="light_background">#DFECDB</color>
+    <color name="primary_color">#5D9CEC</color>
+    <color name="background">#DFECDB</color>
     <color name="text_color">#363636</color>
-    <color name="dark_primary">#5D9CEC</color>
-    <color name="dark_background">#060E1E</color>
-    <color name="dark_card">#141922</color>
-
+    <color name="spinner_color">#FFFFFFFF</color>
+    <color name="calnder_item">#FFFFFFFF</color>
+    <color name="text_calnder_item">#FF000000</color>
 </resources>
 

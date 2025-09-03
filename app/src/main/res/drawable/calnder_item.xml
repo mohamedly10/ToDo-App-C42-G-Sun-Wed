@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
 
-    <solid android:color="@color/white" />
+    <solid android:color="@color/calnder_item" />
 
 
     <corners android:radius="14dp" />

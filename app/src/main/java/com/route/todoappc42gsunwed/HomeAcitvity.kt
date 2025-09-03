@@ -8,9 +8,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.launch
 import model.CalderModel
@@ -31,6 +33,7 @@ class HomeAcitvity : AppCompatActivity(), CalnderAdapter.OnItemClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         val calendarRecyclerView = findViewById<RecyclerView>(R.id.calnder_recyclerView)
         calendarRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -81,6 +84,20 @@ class HomeAcitvity : AppCompatActivity(), CalnderAdapter.OnItemClickListener{
             }
         }
 
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_settings -> {
+                    openFragment(SettingFragment())
+                    true
+                }
+                else -> {
+                    // أي أيقونة أخرى أو الضغط المتكرر على Home
+                    supportFragmentManager.popBackStack(null, 0)
+                    true
+                }
+            }
+
+        }
 
 
 
@@ -108,4 +125,12 @@ class HomeAcitvity : AppCompatActivity(), CalnderAdapter.OnItemClickListener{
         val db = AppDatabase.getDatabase(this)
         return db.taskDao().getTasksByDate(selectDate)
     }
+
+    private fun openFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.flFragment, fragment) // المكان اللي يظهر فيه الـ fragment
+            .addToBackStack(null)
+            .commit()
+    }
+
 }
